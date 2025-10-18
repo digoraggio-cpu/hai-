@@ -28,6 +28,7 @@ export default function Page() {
         <h3>Links rápidos</h3>
         <ul>
           <li>Frontend: / (esta página)</li>
+          <li><a href="/auth" style={{ color: '#0070f3', textDecoration: 'underline' }}>🔐 Auth Tester</a> - Test login/refresh/logout</li>
           <li>Backend health: <code>/health</code></li>
           <li>Backend ping: <code>/api/ping</code></li>
           <li>Gov.br OIDC: <code>/api/auth/govbr/login</code> → callback em <code>/api/auth/govbr/callback</code></li>
