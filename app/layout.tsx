@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Hacksystem',
-  description: 'Next.js 13 + Express scaffold - Security Testing Platform',
+  title: 'Hacksystem - Security Testing Platform',
+  description: 'Educational hacking lab with JWT auth, IDOR, and privilege escalation challenges',
 };
 
 export default function RootLayout({
