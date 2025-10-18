@@ -1,0 +1,6 @@
+git checkout main
+git pull
+cp /caminho/do/seu/render.yaml ./render.yaml
+git add render.yaml
+git commit -m "add blueprint to main"
+git push
