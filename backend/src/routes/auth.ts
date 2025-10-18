@@ -9,14 +9,16 @@ const users = [
   {
     id: 1,
     email: 'alice@example.com',
-    password: '$2b$10$XqS5z9BzKKJ5h9xH5Kx4gO6pRQz9vx6FJ4u5g8E9h3K1Lx7nH2W1u', // 'password123'
-    name: 'Alice'
+    password: '$2b$10$t8Uoh/3V/wRS53yIrU0D5e95I9J1XvV0JiKNuJp9j2BqTTDF..wiy', // 'password123'
+    name: 'Alice',
+    role: 'user'
   },
   {
     id: 2,
     email: 'bob@example.com',
-    password: '$2b$10$XqS5z9BzKKJ5h9xH5Kx4gO6pRQz9vx6FJ4u5g8E9h3K1Lx7nH2W1u', // 'password123'
-    name: 'Bob'
+    password: '$2b$10$t8Uoh/3V/wRS53yIrU0D5e95I9J1XvV0JiKNuJp9j2BqTTDF..wiy', // 'password123'
+    name: 'Bob',
+    role: 'admin'
   }
 ];
 
@@ -50,7 +52,7 @@ router.post('/login', async (req: Request, res: Response) => {
 
   // Generate tokens
   const accessToken = jwt.sign(
-    { userId: user.id, email: user.email },
+    { userId: user.id, email: user.email, role: user.role },
     ACCESS_SECRET,
     { expiresIn: ACCESS_TTL }
   );
@@ -70,7 +72,8 @@ router.post('/login', async (req: Request, res: Response) => {
     user: {
       id: user.id,
       email: user.email,
-      name: user.name
+      name: user.name,
+      role: user.role
     }
   });
 });
