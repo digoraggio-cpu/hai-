@@ -5,7 +5,7 @@ import React from 'react';
 export default function Page() {
   const ping = async () => {
     try {
-      const res = await fetch((process.env.NEXT_PUBLIC_API_URL || '') + '/api/ping');
+      const res = await fetch('/api/ping');
       const json = await res.json();
       alert(JSON.stringify(json));
     } catch (e) {
